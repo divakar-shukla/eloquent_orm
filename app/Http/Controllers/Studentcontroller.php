@@ -14,8 +14,27 @@ class Studentcontroller extends Controller
      */
     public function index()
     {
-        $users = Student::all();
+
+
+    // foreach (Student::all() as $flight) {
+        //     echo $flight->name;
+        // }; 
+
+
+        $users = Student::find([4,9], ['name', 'email']); 
+        // $users = Student::find(5); 
+        // $users = Student::count(); 
+        // $users = Student::min('age'); 
+        // $users = Student::max('age'); 
+        // $users = Student::sum('age'); 
+        // $users = Student::sum('age'); 
+
+
         return $users;
+
+
+        // $users = Student::where("age", "<", "20")->orderBy("name")->get(); 
+        // return view('welcome', compact("users"));
     }
 
     /**

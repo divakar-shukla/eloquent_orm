@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Welcome</title>
 
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -16,9 +16,32 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+            table, th, td{
+                border:1px solid black;
+                
+            }
+            table{
+                margin: 20px;
+            }
     </style>
     </head>
     <body class="antialiased">
       <h1>Hello</h1>
+    <table Border="1" cellpadding="10" cellspacing="0" >
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>phone</th>
+        </tr>
+      @foreach ($users as $item)
+          <tr>
+            <td>{{$item->name}}</td>
+            <td>{{$item->email}}</td>
+            <td>{{$item->age}}</td>
+            <td>{{$item->phone}}</td>
+        </tr>
+      @endforeach
+    </table>
     </body>
 </html>
